@@ -1,0 +1,20 @@
+/* Fonts */
+@font-face {
+    font-family: 'MyriadPro'; /* Global font */
+    src: url('../fonts/MyriadPro-Regular.otf')  format('truetype');
+}
+
+@font-face {
+    font-family: 'MyriadPro-light'; /* Global font */
+    src: url('../fonts/MyriadPro-Light.otf')  format('truetype');
+}
+
+@font-face {
+    font-family: 'MyriadPro-bold'; /* Global font */
+    src: url('../fonts/MyriadPro-Bold.otf')  format('truetype');
+}
+
+@font-face {
+    font-family: 'Myriad-Pro-Regular';
+    src: url('../fonts/Myriad Pro Regular.ttf')  format('truetype');
+}

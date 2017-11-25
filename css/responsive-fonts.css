@@ -1,0 +1,329 @@
+@media only screen and (max-width : 767px) {
+    /*-------- FONTS SIZES ---------*/
+
+    .xs-font-100{
+        font-size: 100px !important;
+    }
+
+    .xs-font-80{
+        font-size: 80px !important;
+    }
+
+    .xs-font-55{
+        font-size: 55px !important;
+    }
+
+    .xs-font-50{
+        font-size: 50px !important;
+    }
+
+    .xs-font-45{
+        font-size: 45px !important;
+    }
+
+    .xs-font-40{
+        font-size: 40px !important;
+    }
+
+    .xs-font-38{
+        font-size: 38px !important;
+    }
+
+    .xs-font-35{
+        font-size: 35px !important;
+    }
+
+    .xs-font-34{
+        font-size: 34px !important;
+    }
+
+    .xs-font-32{
+        font-size: 32px !important;
+    }
+
+    .xs-font-30{
+        font-size: 30px !important;
+    }
+
+    .xs-font-28{
+        font-size: 28px !important;
+    }
+
+    .xs-font-26{
+        font-size: 26px !important;
+    }
+
+    .xs-font-25{
+        font-size: 25px !important;
+    }
+
+    .xs-font-24{
+        font-size: 24px !important;
+    }
+
+    .xs-font-22{
+        font-size: 22px !important;
+    }
+
+    .xs-font-21{
+        font-size: 21px !important;
+    }
+
+    .xs-font-20{
+        font-size: 20px !important;
+    }
+
+    .xs-font-19{
+        font-size: 19px !important;
+    }
+
+    .xs-font-18{
+        font-size: 18px !important;
+    }
+
+    .xs-font-16{
+        font-size: 16px !important;
+    }
+
+    .xs-font-15{
+        font-size: 15px !important;
+    }
+
+    .xs-font-14{
+        font-size: 14px !important;
+    }
+
+    .xs-font-13{
+        font-size: 13px !important;
+    }
+
+    .xs-font-12{
+        font-size: 12px !important;
+    }
+
+    .xs-font-10{
+        font-size: 10px !important;
+    }
+}
+
+@media only screen and (min-width : 768px) {
+    /*-------- FONTS SIZES ---------*/
+
+
+    .sm-font-100{
+        font-size: 100px !important;
+    }
+
+    .sm-font-80{
+        font-size: 80px !important;
+    }
+
+    .sm-font-55{
+        font-size: 55px !important;
+    }
+
+    .sm-font-50{
+        font-size: 50px !important;
+    }
+
+    .sm-font-45{
+        font-size: 45px !important;
+    }
+
+    .sm-font-40{
+        font-size: 40px !important;
+    }
+
+    .sm-font-38{
+        font-size: 38px !important;
+    }
+
+    .sm-font-35{
+        font-size: 35px !important;
+    }
+
+    .sm-font-34{
+        font-size: 34px !important;
+    }
+
+    .sm-font-32{
+        font-size: 32px !important;
+    }
+
+    .sm-font-30{
+        font-size: 30px !important;
+    }
+
+    .sm-font-28{
+        font-size: 28px !important;
+    }
+
+    .sm-font-26{
+        font-size: 26px !important;
+    }
+
+    .sm-font-25{
+        font-size: 25px !important;
+    }
+
+    .sm-font-24{
+        font-size: 24px !important;
+    }
+
+    .sm-font-22{
+        font-size: 22px !important;
+    }
+
+    .sm-font-21{
+        font-size: 21px !important;
+    }
+
+    .sm-font-20{
+        font-size: 20px !important;
+    }
+
+    .sm-font-19{
+        font-size: 19px !important;
+    }
+
+    .sm-font-18{
+        font-size: 18px !important;
+    }
+
+    .sm-font-16{
+        font-size: 16px !important;
+    }
+
+    .sm-font-15{
+        font-size: 15px !important;
+    }
+
+    .sm-font-14{
+        font-size: 14px !important;
+    }
+
+    .sm-font-13{
+        font-size: 13px !important;
+    }
+
+    .sm-font-12{
+        font-size: 12px !important;
+    }
+
+    .sm-font-10{
+        font-size: 10px !important;
+    }
+}
+
+@media only screen and (min-width : 992px) {
+
+    /*-------- FONTS SIZES ---------*/
+
+
+    .md-font-100{
+        font-size: 100px !important;
+    }
+
+    .md-font-80{
+        font-size: 80px !important;
+    }
+
+    .md-font-55{
+        font-size: 55px !important;
+    }
+
+    .md-font-50{
+        font-size: 50px !important;
+    }
+
+    .md-font-45{
+        font-size: 45px !important;
+    }
+
+    .md-font-40{
+        font-size: 40px !important;
+    }
+
+    .md-font-38{
+        font-size: 38px !important;
+    }
+
+    .md-font-35{
+        font-size: 35px !important;
+    }
+
+    .md-font-34{
+        font-size: 34px !important;
+    }
+
+    .md-font-32{
+        font-size: 32px !important;
+    }
+
+    .md-font-30{
+        font-size: 30px !important;
+    }
+
+    .md-font-28{
+        font-size: 28px !important;
+    }
+
+    .md-font-26{
+        font-size: 26px !important;
+    }
+
+    .md-font-25{
+        font-size: 25px !important;
+    }
+
+    .md-font-24{
+        font-size: 24px !important;
+    }
+
+    .md-font-22{
+        font-size: 22px !important;
+    }
+
+    .md-font-21{
+        font-size: 21px !important;
+    }
+
+    .md-font-20{
+        font-size: 20px !important;
+    }
+
+    .md-font-19{
+        font-size: 19px !important;
+    }
+
+    .md-font-18{
+        font-size: 18px !important;
+    }
+
+    .md-font-16{
+        font-size: 16px !important;
+    }
+
+    .md-font-15{
+        font-size: 15px !important;
+    }
+
+    .md-font-14{
+        font-size: 14px !important;
+    }
+
+    .md-font-13{
+        font-size: 13px !important;
+    }
+
+    .md-font-12{
+        font-size: 12px !important;
+    }
+
+    .md-font-10{
+        font-size: 10px !important;
+    }
+}
+
+
+
