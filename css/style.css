@@ -118,6 +118,7 @@ body,html{
     /*border-left: 3px solid #fff;*/
     min-height: 120px;
     margin: 0 auto;
+    max-width: 1000px;
 }
 
 .header-banner .banner-content .avatar-xs-container img{
@@ -126,6 +127,7 @@ body,html{
 
 .header-banner .banner-content .avatar-container img{
     width: 45%;
+    max-width: 150px;
     height: 420px;
 }
 
@@ -252,7 +254,8 @@ body,html{
 }
 
 .project-wrapper img{
-    height: 180px;
+    max-height: 280px;
+    min-height: 180px;
     width: 100%;
 }
 
