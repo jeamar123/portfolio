@@ -31,7 +31,6 @@ $(document).ready(function() {
 	    $("#main-navigation .navbar-right li").removeClass('active');
 			$("#main-navigation .navbar-right li:nth-child(3)").addClass('active');
 	  }else if( $(this).scrollTop() >= $('#content-four').position().top - 50 ){
-	  	console.log('sdfsdf');
 	    $("#main-navigation .navbar-right li").removeClass('active');
 			$("#main-navigation .navbar-right li:nth-child(4)").addClass('active');
 	  }
