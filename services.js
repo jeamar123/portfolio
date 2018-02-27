@@ -10,6 +10,7 @@ module.exports = function( app, express, dir, io) {
 
 	app.post('/api/notify', function(req, res) {
 	    io.emit('notif', req.body)
+	    res.json({'status' : req.body});
 	});
 	
 	return api;

@@ -1,3 +1,4 @@
+#!/usr/bin/env nodejs
 var express  = require('express');
 var socketIO = require('socket.io');
 var app      = express();                  
