@@ -31,6 +31,20 @@ var api = require( dir + '/services')(app, express, dir, io);
 
 app.use('/api', api);
 
+io.on('connection', (socket) => {
+  console.log('Client connected');
+  socket.on('disconnect', () => console.log('Client disconnected'));
+});
+
+io.on('ping', (data) => {
+  console.log('Pinged!');
+  console.log(data);
+  io.emit('ping', data);
+});
+
+setInterval(() => {
+  io.emit('ping', 'pinged');
+}, 1000);
 
 http.listen(config.port, function( err ){
     if( err ) {
@@ -40,15 +54,5 @@ http.listen(config.port, function( err ){
     }
 })
 
-io.on('connect', (socket) => {
-  console.log('Client connected');
-  io.emit('connect', true);
-  socket.on('disconnect', () => console.log('Client disconnected'));
-});
 
-io.on('ping', (data) => {
-  console.log('Pinged!');
-  console.log(data);
-  io.emit('ping', data);
-});
 
