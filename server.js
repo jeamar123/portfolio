@@ -48,5 +48,6 @@ io.on('connection', (socket) => {
 io.on('ping', (data) => {
   console.log('Pinged!');
   console.log(data);
+  io.emit('ping', data);
 });
 
