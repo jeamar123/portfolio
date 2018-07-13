@@ -40,9 +40,9 @@ http.listen(config.port, function( err ){
     }
 })
 
-io.on('connection', (socket) => {
+io.on('connect', (socket) => {
   console.log('Client connected');
-  io.emit('connection', true);
+  io.emit('connect', true);
   socket.on('disconnect', () => console.log('Client disconnected'));
 });
 
