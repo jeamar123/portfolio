@@ -14,6 +14,11 @@ module.exports = function( app, express, dir, io) {
 	    	'status' : true,
     	});
 	});
+
+	app.post('/api/send_message', function(req, res) {
+	    io.emit('chat_' + req.body.user_id, req.body);
+	    res.json(req.body);
+	});
 	
 	return api;
 }
