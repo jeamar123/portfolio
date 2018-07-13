@@ -16,8 +16,12 @@ module.exports = function( app, express, dir, io) {
 	});
 
 	app.post('/api/send/message', function(req, res) {
-    io.emit('chat_' + req.body.user_id, req.body);
-    res.json(req.body);
+    // io.emit('chat_' + req.body.user_id, req.body);
+    console.log(req.body);
+    res.json({
+	    	'status' : true,
+	    	'data' : req.body
+    	});
 	});
 	
 	return api;
