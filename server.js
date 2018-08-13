@@ -46,7 +46,7 @@ setInterval(() => {
   io.emit('ping', 'pinged');
 }, 1000);
 
-http.listen(config.port, function( err ){
+http.listen(config.port, '192.168.137.1', function( err ){
     if( err ) {
         console.log( err );
     } else {

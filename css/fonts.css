@@ -1,20 +1,56 @@
 /* Fonts */
 @font-face {
     font-family: 'MyriadPro'; /* Global font */
-    src: url('../fonts/MyriadPro-Regular.otf')  format('truetype');
+    src: url('../fonts/myriad/MyriadPro-Regular.otf')  format('truetype');
 }
 
 @font-face {
     font-family: 'MyriadPro-light'; /* Global font */
-    src: url('../fonts/MyriadPro-Light.otf')  format('truetype');
+    src: url('../fonts/myriad/MyriadPro-Light.otf')  format('truetype');
 }
 
 @font-face {
     font-family: 'MyriadPro-bold'; /* Global font */
-    src: url('../fonts/MyriadPro-Bold.otf')  format('truetype');
+    src: url('../fonts/myriad/MyriadPro-Bold.otf')  format('truetype');
 }
 
 @font-face {
     font-family: 'Myriad-Pro-Regular';
-    src: url('../fonts/Myriad Pro Regular.ttf')  format('truetype');
+    src: url('../fonts/myriad/Myriad Pro Regular.ttf')  format('truetype');
 }
+
+/*-----------------------------*/
+@font-face {
+    font-family: 'Helvetica Light'; /* Global font */
+    src: url('../fonts/helveticaneue/HelveticaNeue Light.ttf')  format('truetype');
+}
+
+@font-face {
+    font-family: 'Helvetica Med'; /* Global font */
+    src: url('../fonts/helveticaneue/HelveticaNeue Medium.ttf')  format('truetype');
+}
+
+@font-face {
+    font-family: 'HelveticaNeue Thin'; /* Global font */
+    src: url('../fonts/helveticaneue/HelveticaNeue Thin.ttf')  format('truetype');
+}
+
+
+/*----------------------------*/
+@font-face {
+    font-family: 'Roboto Bold'; /* Global font */
+    src: url('../fonts/roboto/Roboto-Bold.ttf')  format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto Medium'; /* Global font */
+    src: url('../fonts/roboto/Roboto-Medium.ttf')  format('truetype');
+}
+
+/*----------------------------*/
+@font-face {
+    font-family: 'OpenSans Bold'; /* Global font */
+    src: url('../fonts/open-sans/OpenSans-Bold.ttf')  format('truetype');
+}
+
+
