@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv='cache-control' content='no-cache'>
+	<meta http-equiv='expires' content='-1'>
+	<meta http-equiv='pragma' content='no-cache'>
+	<title>LazyPro - Timepicker</title>
+
+
+	<link rel="stylesheet" type="text/css" href="css/fonts.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="css/lazy.timepicker.css">
+	<link rel="stylesheet" type="text/css" href="css/custom-grid.css">
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	
+
+</head>
+<body>
+	<header>
+		<div class="header-container">
+			<ul class="header-nav">
+				<li><a href="#" class="brand">LazyPro</a></li>
+				<!-- <li><a href="index.html">CSS</a></li> -->
+				<li class="active"><a href="timepicker.html">Timepicker</a></li>
+				<li><a href="datepicker.html">Datepicker</a></li>
+				<!-- <li><a href="#">Coming soon</a></li> -->
+				
+			</ul>
+
+			<!-- <ul class="header-nav nav-right">
+				<li><a href="#" class="download-btn">Download</a></li>
+			</ul> -->
+
+		</div>
+	</header>
+
+	<section>
+		<div class="body-container">
+
+			<div class="timepicker-section-container">
+				<div class="col-9">
+					<div class="plugin-name">
+						<p class="header-title font-size-50">lazy.timepicker.js</p>
+						<p class="plugin-description">A customized jquery plugin which allows a user to select a time.</p>
+
+						<button class="download-btn">Download</button>
+					</div>
+					<div class="white-space-30"></div>
+
+					<p class="fs-30 fw-700">Demo:</p>
+					<div class="white-space-10"></div>
+					<div class="input-container">
+						<input id="lazy-time-picker" type="text" placeholder="Select time" class="form-input" style="width: 250px" />
+					</div>
+					<div class="white-space-30"></div>
+					<div class="demo-info-box">
+						<p>
+							&lt;input id="element_id" type="text" placeholder="Select time" /&gt;
+						</p>
+					</div>
+
+					<div class="white-space-30"></div>
+					<p class="font-size-20 fw-700">Usage:</p>
+					<div class="demo-info-box">
+						<p>
+							<span class="comment">&lt; ! - -  Include necessary scripts and styles  - - &gt;</span>
+
+							&lt;link rel="stylesheet" type="text/css" href="css/font-awesome.css"&gt;
+							&lt;link rel="stylesheet" type="text/css" href="css/lazy.timepicker.css"&gt;
+
+							&lt;script type="text/javascript" src="js/jquery.min.js"&gt;&lt;/script&gt;
+							&lt;script type="text/javascript" src="js/moment.js"&gt;&lt;/script&gt;
+							&lt;script type="text/javascript" src="js/lazy.timepicker.js"&gt;&lt;/script&gt;
+
+							<span class="comment">&lt; ! - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - &gt;</span>
+
+
+
+							$("#element_id" ).lazytimepicker({
+								parentClass : "lazy-time-picker-initialized",
+								theme : "default-theme",
+								time: moment(),
+								position: "bottom",
+							});
+						</p>
+					</div>
+
+					<div class="white-space-30"></div>
+					<p class="font-size-20 fw-700">Props:</p>
+					<div class="options-info-box">
+						<table class="options-tbl">
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Type</th>
+									<th>Default</th>
+									<th>Required</th>
+									<th>Description</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>parentClass</td>
+									<td>String</td>
+									<td>"lazy-time-picker-initialized"</td>
+									<td>Optional</td>
+									<td>Class for the picker's parent element.</td>
+								</tr>
+								<tr>
+									<td>theme</td>
+									<td>String</td>
+									<td>"default-theme"</td>
+									<td>Optional</td>
+									<td>Picker color scheme ( "dark-theme", "default-theme" ).</td>
+								</tr>
+								<tr>
+									<td>time</td>
+									<td>String/Time</td>
+									<td>moment()</td>
+									<td>Optional</td>
+									<td>Initial time.</td>
+								</tr>
+								<tr>
+									<td>position</td>
+									<td>String</td>
+									<td>"bottom"</td>
+									<td>Optional</td>
+									<td>Timepicker drop position.</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					
+				</div>
+			</div>
+			
+		</div>
+	</section>
+	
+	<footer>
+		<div class="footer-container">
+			<p>&copy; 2018 LazyPro. All rights reserved.</p>
+		</div>
+	</footer>
+</body>
+
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/download.js"></script>
+	<script type="text/javascript" src="js/moment.js"></script>
+	<script type="text/javascript" src="js/lazy.timepicker.min.js"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+			$("#lazy-time-picker" ).lazytimepicker({
+			});
+
+			$(".download-btn").click(function(){
+				download("css/lazy.timepicker.css");
+				download("js/lazy.timepicker.min.js");
+			});
+
+		});
+		
+	</script>
+</html>
+
+

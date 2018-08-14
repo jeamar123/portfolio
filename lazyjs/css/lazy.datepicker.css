@@ -1,0 +1,341 @@
+.datepicker-container{
+	display: none;
+	background-color: #FFF;
+	position: absolute;
+	z-index: 999999;
+	left: 0;
+	width: 200px;
+	vertical-align: middle;
+	justify-content: center;
+	align-items: center;
+  box-shadow: 1px 3px 10px #aaa;
+}
+
+.datepicker-container,
+.datepicker-container *{
+	box-sizing: border-box;
+}
+
+.datepicker-container .lazy-datepicker-header{
+	padding: 10px 15px;
+  background-color: #307F82;
+  position: relative;
+}
+
+.datepicker-container .lazy-datepicker-header.hide-lazy-picker-header{
+	display: none;
+}
+
+.datepicker-container .lazy-datepicker-header p{
+	margin: 0;
+	color: #FFF;
+}
+
+.datepicker-container .lazy-datepicker-header p.lazy_year_selected{
+	font-weight: 300;
+}
+
+.datepicker-container .lazy-datepicker-header p.lazy_week_month_day_selected{
+	font-weight: 700;
+	font-size: 20px;
+}
+
+.datepicker-container .lazy-datepicker-container{
+	display: inline-block;
+	width: 100%;
+	position: relative;
+  padding: 10px 15px 15px 15px;
+}
+
+.datepicker-container .lazy-datepicker-container .lazy-datepicker-month-year-select{
+	display: flex;
+	text-align: center;
+	vertical-align: middle;
+	justify-content: center;
+	align-items: center;
+	height: 30px;
+}
+
+.datepicker-container .lazy-datepicker-container .lazy-datepicker-month-year-select .lazy-arrow{
+	flex: 1;
+	cursor: pointer;
+	font-size: 20px;
+}
+
+.datepicker-container .lazy-datepicker-container .lazy-datepicker-month-year-select .month-center-selection{
+	flex: 3;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.datepicker-container .lazy-datepicker-container .lazy-calendar-wrapper{
+	display: inline-block;
+	width: 100%;
+}
+
+.datepicker-container .lazy-datepicker-container .lazy-calendar-wrapper .lazy-weeknames{
+	display: flex;
+	height: 35px;
+	width: 100%;
+	text-align: center;
+	vertical-align: middle;
+	justify-content: center;
+	align-items: center;
+}
+
+.datepicker-container .lazy-datepicker-container .lazy-calendar-wrapper .lazy-weeknames div{
+	flex: 1;
+  font-weight: 700;
+  color: #aaa;
+  font-size: 11px;
+}
+
+
+.datepicker-container .lazy-datepicker-container .lazy-calendar-wrapper .lazy-weekdates{
+	display: inline-block;
+	width: 100%;
+}
+
+.datepicker-container .lazy-datepicker-container .lazy-calendar-wrapper .lazy-weekdates .lazy-week{
+	display: flex;
+	width: 100%;
+	text-align: center;
+	vertical-align: middle;
+	justify-content: center;
+	align-items: center;
+}
+
+.datepicker-container .lazy-datepicker-container .lazy-calendar-wrapper .lazy-weekdates .lazy-week div{
+	flex: 1;
+  text-align: center;
+  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  color: #333;
+  font-weight: 700;
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+.datepicker-container .lazy-datepicker-container .lazy-calendar-wrapper .lazy-weekdates .lazy-week div span{
+	display: inline-block;
+}
+
+.datepicker-container .lazy-datepicker-container .lazy-calendar-wrapper .lazy-weekdates .lazy-week div.active span{
+  height: 100%;
+	width: 100%;
+  border-radius: 50%;
+  background: #307F82;
+  color: #FFF;
+}
+
+/* MONTHS */
+	.datepicker-container .lazy-datepicker-months-container .lazy-months-header{
+		display: flex;
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    margin-top: 10px;
+    padding: 0 15px;
+	}
+
+	.datepicker-container .lazy-datepicker-months-container .lazy-months-header .lazy-arrow{
+		flex: 1;
+		cursor: pointer;
+		font-size: 20px;
+	}
+
+	.datepicker-container .lazy-datepicker-months-container .lazy-months-header .select-month-center-selection{
+		flex: 3;
+		font-weight: 700;
+		cursor: pointer;
+	}
+
+	.datepicker-container .lazy-datepicker-months-container .lazy-months-container{
+		display: inline-block;
+		width: 100%;
+		padding: 10px 0;
+	}
+
+	.datepicker-container .lazy-datepicker-months-container .lazy-months-container .lazy-month-row{
+		display: flex;
+		width: 100%;
+	}
+
+	.datepicker-container .lazy-datepicker-months-container .lazy-months-container .lazy-month-row .lazy-month{
+	  flex: 1;
+	  height: 50px;
+	  line-height: 50px;
+	  text-align: center;
+	  vertical-align: middle;
+	  justify-content: center;
+	  align-items: center;
+	  cursor: pointer;
+	  margin: 0 6px;
+	}
+
+	.datepicker-container .lazy-datepicker-months-container .lazy-months-container .lazy-month-row:nth-child(1) .lazy-month{
+	  border: 1px solid #f0f0f0;
+	  border-width: 0 0 1px 0;
+	}
+
+	.datepicker-container .lazy-datepicker-months-container .lazy-months-container .lazy-month-row:nth-child(3) .lazy-month{
+	  border: 1px solid #f0f0f0;
+	  border-width: 1px 0 0 0;
+	}
+
+	.datepicker-container .lazy-datepicker-months-container .lazy-months-container .lazy-month-row .lazy-month:hover,
+	.datepicker-container .lazy-datepicker-months-container .lazy-months-container .lazy-month-row .lazy-month.active{
+	  background-color: #589a9c;
+	  color: #FFF;
+	  border-radius: 2px;
+	}
+
+
+/* YEAR */
+	.datepicker-container .lazy-datepicker-years-container .lazy-years-header{
+		display: flex;
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    margin-top: 10px;
+    padding: 0 15px;
+	}
+
+	.datepicker-container .lazy-datepicker-years-container .lazy-years-header .lazy-arrow{
+		flex: 1;
+		cursor: pointer;
+		font-size: 20px;
+	}
+
+	.datepicker-container .lazy-datepicker-years-container .lazy-years-header .select-year-center-selection{
+		flex: 3;
+		font-weight: 700;
+		cursor: default;
+	}
+
+	.datepicker-container .lazy-datepicker-years-container .lazy-years-container{
+		display: inline-block;
+		width: 100%;
+		padding: 10px 0;
+	}
+
+	.datepicker-container .lazy-datepicker-years-container .lazy-years-container .lazy-year-row{
+		display: flex;
+		width: 100%;
+	}
+
+	.datepicker-container .lazy-datepicker-years-container .lazy-years-container .lazy-year-row .lazy-year{
+	  flex: 1;
+	  height: 50px;
+	  line-height: 50px;
+	  text-align: center;
+	  vertical-align: middle;
+	  justify-content: center;
+	  align-items: center;
+	  cursor: pointer;
+	  margin: 0 6px;
+	  font-size: 12px;
+	}
+
+	.datepicker-container .lazy-datepicker-years-container .lazy-years-container .lazy-year-row:nth-child(1) .lazy-year{
+	  border: 1px solid #f0f0f0;
+	  border-width: 0 0 1px 0;
+	}
+
+	.datepicker-container .lazy-datepicker-years-container .lazy-years-container .lazy-year-row:nth-child(3) .lazy-year{
+	  border: 1px solid #f0f0f0;
+	  border-width: 1px 0 0 0;
+	}
+
+	.datepicker-container .lazy-datepicker-years-container .lazy-years-container .lazy-year-row .lazy-year:hover,
+	.datepicker-container .lazy-datepicker-years-container .lazy-years-container .lazy-year-row .lazy-year.active{
+	  background-color: #589a9c;
+	  color: #FFF;
+	  border-radius: 2px;
+	}
+
+.datepicker-container .btn-container{
+	display: flex;
+  width: 100%;
+  text-align: center;
+}
+
+.datepicker-container .btn-container button{
+  flex: 1;
+  background: #307F82;
+  border: none;
+  height: 35px;
+  padding: 0;
+  color: #FFF;
+  font-size: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 700;
+}
+
+.datepicker-container .btn-container button:focus{
+	outline: none;
+}
+
+.datepicker-container .btn-container .btn-cancel{
+  border-right: 1px solid #4a999c;
+}
+
+
+/* DARK-THEME */
+
+.datepicker-container.dark-theme{
+	background-color: #333;
+	border: 1px solid #ccc;
+	color: #e8e8e8;
+}
+
+.datepicker-container.dark-theme .lazy-datepicker-header {
+    background-color: #222;
+}
+
+.datepicker-container.dark-theme .lazy-datepicker-container .lazy-calendar-wrapper .lazy-weekdates .lazy-week div {
+    color: #e8e8e8;
+}
+
+.datepicker-container.dark-theme .lazy-datepicker-months-container .lazy-months-container .lazy-month-row:nth-child(1) .lazy-month {
+    border: 1px solid #589a9c;
+    border-width: 0 0 1px 0;
+}
+
+.datepicker-container.dark-theme .lazy-datepicker-months-container .lazy-months-container .lazy-month-row:nth-child(3) .lazy-month {
+    border: 1px solid #589a9c;
+    border-width: 1px 0 0 0;
+}
+
+.datepicker-container.dark-theme .lazy-datepicker-years-container .lazy-years-container .lazy-year-row:nth-child(1) .lazy-year{
+  border: 1px solid #589a9c;
+  border-width: 0 0 1px 0;
+}
+
+.datepicker-container.dark-theme .lazy-datepicker-years-container .lazy-years-container .lazy-year-row:nth-child(3) .lazy-year{
+  border: 1px solid #589a9c;
+  border-width: 1px 0 0 0;
+}
+
+
+.datepicker-container.dark-theme .btn-container{
+	border-top: 1px solid #555;
+}
+
+.datepicker-container.dark-theme .btn-container button{
+	background-color: #222;
+	color: #e8e8e8;
+}
+
+.datepicker-container.dark-theme .btn-container .btn-cancel{
+  border-right: 1px solid #555;
+}

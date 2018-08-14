@@ -1,0 +1,39 @@
+/* Fonts */
+@font-face {
+    font-family: 'MyriadPro'; /* Global font */
+    src: url('../fonts/myriad/MyriadPro-Regular.otf')  format('truetype');
+}
+
+@font-face {
+    font-family: 'MyriadPro-light'; /* Global font */
+    src: url('../fonts/myriad/MyriadPro-Light.otf')  format('truetype');
+}
+
+@font-face {
+    font-family: 'MyriadPro-bold'; /* Global font */
+    src: url('../fonts/myriad/MyriadPro-Bold.otf')  format('truetype');
+}
+
+@font-face {
+    font-family: 'Myriad-Pro-Regular';
+    src: url('../fonts/myriad/Myriad Pro Regular.ttf')  format('truetype');
+}
+
+/* ------------------ */
+
+@font-face {
+    font-family: 'RobotoLight'; /* Global font */
+    src: url('../fonts/roboto/Roboto-Light.ttf')  format('truetype');
+}
+
+@font-face {
+    font-family: 'RobotoRegular'; /* Global font */
+    src: url('../fonts/roboto/Roboto-Regular.ttf')  format('truetype');
+}
+
+/*--------------------*/
+
+@font-face {
+    font-family: 'OpenSansLight'; /* Global font */
+    src: url('../fonts/open-sans/OpenSans-Light.ttf')  format('truetype');
+}
