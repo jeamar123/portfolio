@@ -162,7 +162,7 @@ p{
 	}
 
 	.demo-info-box{
-	  padding: 9px 14px;
+	  padding: 30px 20px;
 	  margin-bottom: 14px;
 	  background-color: #f7f7f9;
 	  border: 1px solid #e1e1e8;
@@ -171,9 +171,14 @@ p{
 	}
 
 	.timepicker-section-container .demo-info-box p{
-	  white-space: pre-wrap;
+	  /*white-space: pre-wrap;*/
     color: #333;
-    margin: -10px 0 -5px -425px;
+    margin: 0;
+    /*margin: -10px 0 -5px -425px;*/
+	}
+
+	.timepicker-section-container .demo-info-box p.tab-1{
+	  margin-left: 20px;
 	}
 
 	.css-section-container .demo-info-box p{
