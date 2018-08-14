@@ -37,3 +37,10 @@
     font-family: 'OpenSansLight'; /* Global font */
     src: url('../fonts/open-sans/OpenSans-Light.ttf')  format('truetype');
 }
+
+/*--------------------*/
+
+@font-face {
+    font-family: 'Consolas'; /* Global font */
+    src: url('../fonts/consolas/CONSOLA.ttf')  format('truetype');
+}
