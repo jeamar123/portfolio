@@ -42,5 +42,5 @@
 
 @font-face {
     font-family: 'Consolas'; /* Global font */
-    src: url('../fonts/consolas/CONSOLA.ttf')  format('truetype');
+    src: url('../fonts/consolas/CONSOLA.TTF')  format('truetype');
 }
