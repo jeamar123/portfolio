@@ -1,0 +1,75 @@
+<div class="auth-content" auth-directive>
+
+  <div ng-if="!isSignupShow" class="login-container">
+    <div class="white-box">
+      <div class="img-wrapper">
+        <img src="img/lock.png">
+      </div>
+      <form ng-submit="login(login_data)">
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" class="form-control" id="email" ng-model="login_data.email">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" ng-model="login_data.password">
+        </div>
+        <!-- <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Stay logged in</label>
+        </div> -->
+
+        <div class="form-group text-center">
+          <div class="white-space-20"></div>
+          <p ng-if="login_err" class="text-error text-weight-700">User not found. Please check your credentials.</p>
+          <div class="white-space-10"></div>
+          <button type="submit" class="btn btn-primary submit-btn">Go</button>
+          <div class="white-space-10"></div>
+          <a href="javascript:void(0)" ng-click="toggleSignup()" class="text-hover-underline color-black-333"><p class="font-11 text-weight-700">No Account yet? Sign up.</p></a>
+        </div>
+        
+      </form>
+    </div>
+  </div>
+
+  <div ng-if="isSignupShow" class="signup-container">
+    <div class="white-box">
+      <div class="img-wrapper">
+        <img src="img/user-512.png">
+      </div>
+      <form>
+        <div class="form-group">
+          <label for="semail">Full Name</label>
+          <input type="text" class="form-control" id="semail" ng-model="signup_data.name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="text" class="form-control" id="email" ng-model="signup_data.email">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" ng-model="signup_data.password">
+        </div>
+        <div class="form-group">
+          <label for="re">Re-Type Password</label>
+          <input type="password" class="form-control" id="re" ng-model="signup_data.re_password">
+        </div>
+
+        <div class="form-group text-center">
+          <div class="white-space-20"></div>
+          <p ng-if="email_invalid_err" class="text-error text-weight-700">Email is invalid.</p>
+          <p ng-if="password_err" class="text-error text-weight-700">Password did not match.</p>
+          <p ng-if="some_err" class="text-error text-weight-700" ng-bind="err_message"></p>
+          <p ng-if="some_succ" class="text-success text-weight-700">Successfully created account. <a href="javascript:void(0)" ng-click="toggleSignup()" class="text-hover-underline color-black-333">Login now !</a></p>
+          <div class="white-space-10"></div>
+          <button ng-disabled="!signup_data.name || !signup_data.email || !signup_data.password || !signup_data.re_password" type="submit" class="btn btn-primary submit-btn" ng-click="signup(signup_data)">Submit</button>
+          <div class="white-space-10"></div>
+          <a href="javascript:void(0)" ng-click="toggleSignup()" class="text-hover-underline color-black-333"><p class="font-11 text-weight-700">Already have Account? Log in.</p></a>
+        </div>
+        
+      </form>
+    </div>
+  </div>
+
+</div>
+

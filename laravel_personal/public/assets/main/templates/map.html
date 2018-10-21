@@ -1,0 +1,41 @@
+<div class="map-content" map-directive>
+  <div class="row geo-container">
+    <div class="col col-md-3 no-padding-right">
+      <p class="font-16 text-weight-700" ng-click="triggerNotif()">Map Notifications</p>
+      <div class="white-space-10"></div>
+      <div class="notif-container">
+        <div class="white-box">
+          <div class="notif d-flex flex-row" ng-class="{'active': notif_active == list.id}" ng-repeat="list in notif_list">
+            <div class="img-wrapper col no-padding-left">
+              <img ng-src="img/users/{{list.img}}">
+              <!-- <img src="img/user-icon.png"> -->
+            </div>
+            <div class="content col col-8 no-padding-left justify-content-center align-self-center">
+              <p class="name" ng-bind="list.name">Jose Rizal</p>
+              <p class="message text-italic" ng-bind="list.message">
+                Hi! I am here.
+              </p>
+            </div>
+            
+            <div class="icon-wrapper col col-1 p-0 justify-content-center align-self-center text-right">
+              <a href="javascript:void(0)" ng-click="selectNotif(list)">
+                <i class="fa fa-search font-20"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col col-md-9">
+      <div class="white-space-20"></div>
+      <div class="white-space-5"></div>
+      <div class="map-container">
+
+        <div id="map"></div>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,365 @@
+<div class="expenses-content" expenses-directive>
+	<div class="row">
+    <div class="col col-sm-9 col-md-9 no-padding-right">
+      <div class="white-box">
+
+        <div class="calendar-header">
+          <div class="header-arrow" ng-click="prevMonth()">
+            <i class="fa fa-caret-left"></i>
+          </div>
+          <div class="header-current-date" ng-click="toggleCalendarSelector()">
+            <p class="text-weight-700 text-center fs-20" ><span ng-bind="month_today">September</span> <span ng-bind="year_today">2018</span></p>
+          </div>
+          <div class="header-arrow" ng-click="nextMonth()">
+            <i class="fa fa-caret-right"></i>
+          </div>
+        </div>
+      	
+        <div class="calendar-container">
+          <div class="weekdays-container">
+            <div class="day" ng-repeat="list in weekdays_long">
+              <span ng-bind="list"></span>
+            </div>
+          </div>
+
+          <div class="daysperweek-container">
+
+            <div class="days-container" ng-repeat="weeks in calendar_arr">
+              <div class="date" ng-class="{'disabled' : !list.enabled}" ng-repeat="list in weeks.week track by $index" ng-click="openAddExpensesModal( list )"> 
+                <div class="date-header">
+                  <div class="day-date" ng-bind="list.date_number"></div>
+
+                  <div ng-if="list.enabled" class="date-edit-icon">
+                    <i class="fa fa-pencil"></i>
+                  </div>
+                </div>
+
+                <div class="expenses-daily-list">
+
+                  <div class="expense" ng-repeat="expenses in list.expenses_list track by $index">
+                    <i class="fa fa-circle color-blue"></i>
+                    <div class="expense-name" ><span ng-bind="expenses.description | limitTo: 6">Fare</span><span ng-if="expenses.description.length > 6">...</span></div>
+
+                    <div class="expense-value"><span ng-bind="expenses.value | currency:USD$:2"></span></div>
+                  </div>
+                </div>
+
+                <div class="day-total">
+                  <div class="total-name">
+                    Total
+                  </div>
+
+                  <div class="total-value">
+                    <span ng-bind="list.expenses_total | currency:USD$:2 ">00.00</span><span ng-if="!list.enabled">0.00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="col col-sm-3 col-md-3">
+      <div class="white-box">
+
+        <canvas id="expense_id" class="chart chart-pie" chart-data="expensesChartData" chart-labels="expensesChartLabels" chart-options="expensesChartOptions"></canvas>
+
+        <p class="text-weight-700 fs-16 custom-header-border header-title position-relative">Weekly Total</p>
+        <div class="weekly-report-container">
+          <div class="week-report" ng-repeat="list in weeks_total track by $index">
+            <label>
+              <span ng-bind="$index + 1"></span>
+            </label>
+
+            <div class="weekly-total">
+              <p><span ng-bind=" list | currency:USD$:2 ">1,000.00</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="white-space-20"></div>
+
+        <p class="text-weight-700 fs-16 custom-header-border header-title position-relative">
+          Monthly Investments 
+          <a href="javascript:void(0)" ng-click="openAddInvestmentsModal()"><i class="fa fa-plus-circle"></i></a>
+        </p>
+        <div class="investments-container">
+          <div class="investment" ng-repeat="list in investments_arr">
+            <label>
+              <a href="javascript:void(0)" ng-click="deleteInvestment( list.id )"><i class="fa fa-minus-circle"></i></a> 
+              <span ng-bind="list.description">House loan</span>
+            </label>
+
+            <div class="investment-value">
+              <p><span ng-bind="list.value | currency:USD$:2">1,000.00</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="white-space-20"></div>
+
+        <p class="text-weight-700 fs-16 custom-header-border header-title position-relative">
+          Monthly Assets 
+          <a href="javascript:void(0)" ng-click="openAddAssetsModal()"><i class="fa fa-plus-circle"></i></a>
+        </p>
+        <div class="monthly-income-container">
+          <div class="monthly-income" ng-repeat="list in assets_arr">
+            <label>
+              <a href="javascript:void(0)" ng-click="deleteAsset( list.id )"><i class="fa fa-minus-circle"></i></a>  
+              <span ng-bind="list.description">Main</span>
+              (<span ng-bind="list.full_date | cmdate: 'MM/dd/yyyy'" style="font-size: 10px;"></span>)
+            </label>
+
+            <div class="income-value">
+              <p><span ng-bind="list.value | currency:USD$:2">1,000.00</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="white-space-50"></div>
+
+        <p class="text-weight-700 fs-16 custom-header-border header-title position-relative">Grand Total</p>
+        <div class="grand-total-container">
+          <div class="total-item">
+            <label>Total Assets</label>
+            <div class="total-value">
+              <p><span ng-bind="monthly_income_total | currency:USD$:2 ">1,000.00</span></p>
+            </div>
+          </div>
+
+          <div class="total-item">
+            <label>Total Investments</label>
+            <div class="total-value">
+              <p>- <span ng-bind="monthly_investments_total | currency:USD$:2 ">1,000.00</span></p>
+            </div>
+          </div>
+
+          <div class="total-item">
+            <label>Total Expenses</label>
+            <div class="total-value">
+              <p>- <span ng-bind="monthly_expenses_total | currency:USD$:2 ">1,000.00</span></p>
+            </div>
+          </div>
+
+          <div class="total-item" style="background: #f4f4f4;margin-top: 30px;">
+            <label style="font-size: 16px;color: #000 !important;">Balance</label>
+            <div class="total-value">
+              <p style="font-size: 22px;"><span ng-bind="monthly_balance | currency:USD$:2 ">1,000.00</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="white-space-20"></div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="showSelectMonthYearModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header justify-content-center">
+          <h5 class="modal-title fw-700 fs-16 " id="exampleModalLabel">
+            <span ng-if="!showSelectYear">Select Month</span>
+            <span ng-if="showSelectYear">Select Year</span>
+          </h5>
+          <a href="javascript:void(0)" class="modal-header-close" data-dismiss="modal" aria-label="Close">
+            <i class="fa fa-times-circle"></i>
+          </a>
+        </div>
+        <div class="modal-body" style="padding-bottom: 30px;">
+          <div ng-if="!showSelectYear" class="year-select">
+            <div class="year-arrow" ng-click="prevYear()">
+              <i class="fa fa-caret-left"></i>
+            </div>
+            <div class="year-value" ng-click="toggleSelectYearMonth()">
+              <span ng-bind="year_today">2018</span>
+            </div>
+            <div class="year-arrow" ng-click="nextYear()">
+              <i class="fa fa-caret-right"></i>
+            </div>
+          </div>
+
+          <div ng-if="!showSelectYear" class="month-selector-container">
+            <div class="months" ng-class="{'active' : month_today_short == list}" ng-repeat="list in months_list" ng-click="selectMonth(list)">
+              <span ng-bind="list"></span>
+            </div>
+          </div>
+
+          <div ng-if="showSelectYear" class="year-range-select">
+            <div class="year-arrow" ng-click="prevYearRange()">
+              <i class="fa fa-caret-left"></i>
+            </div>
+            <div class="year-value">
+              <span ng-bind="years_range_list[0]">2018</span> - <span ng-bind="years_range_list[11]">2018</span>
+            </div>
+            <div class="year-arrow" ng-click="nextYearRange()">
+              <i class="fa fa-caret-right"></i>
+            </div>
+          </div>
+
+          <div ng-if="showSelectYear" class="year-range-selector-container">
+            <div class="years" ng-class="{'active' : year_today == list}" ng-repeat="list in years_range_list" ng-click="selectYear(list)">
+              <span ng-bind="list"></span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="showDateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header justify-content-center">
+          <h5 class="modal-title fw-700 fs-16 " id="exampleModalLabel" ng-bind="selected_date.date">September 01, 2018</h5>
+          <a href="javascript:void(0)" class="modal-header-close" data-dismiss="modal" aria-label="Close">
+            <i class="fa fa-times-circle"></i>
+          </a>
+        </div>
+        <div class="modal-body">
+
+          <span ng-if="date_modal_view == 0">
+            <div class="btn-options-container">
+              <button class="btn" ng-click="setDateModalView( 1 )">Add</button>
+              <button class="btn" ng-click="setDateModalView( 2 )" ng-disabled="expenses_selected.length == 0 || expenses_selected.length > 1">Edit</button>
+              <button class="btn" ng-click="deleteExpenses( )" ng-disabled="expenses_selected.length == 0">Delete</button>
+            </div>
+
+            <div class="date-expense-container">
+              <div class="expense-row" ng-repeat="list in selected_date.expenses_list">
+                <input type="checkbox" ng-model="expenses_selected_checkbox[$index]" ng-click="selectExpensesItem( $index, expenses_selected_checkbox[$index], list );">
+                <div class="description" ng-bind="list.description">Fare</div>
+                <div class="value"><span ng-bind="list.value | currency:USD$:2">10.00</span></div>
+              </div>
+
+              <div class="white-space-20"></div>
+              <div class="expense-row total" >
+                <div class="description">Total : </div>
+                <div class="value"><span ng-bind="selected_date.expenses_total | currency:USD$:2">1,000.00</span></div>
+              </div>
+            </div>
+          </span>
+
+          <div ng-if="date_modal_view == 1" class="add-expenses-container">
+            <form ng-submit="addExpenses( add_expenses )">
+              <div class="white-space-20"></div>
+              <div class="form-group">
+                <label>Description</label>
+                <input type="text" class="form-control" placeholder="" ng-model="add_expenses.description"/>
+              </div>
+              <div class="form-group">
+                <label>Value</label>
+                <input type="number" class="form-control" placeholder="" ng-model="add_expenses.value"/>
+              </div>  
+              <div class="white-space-20"></div>
+              <button hidden type="submit"></button>
+            </form>
+          </div>
+
+          <div ng-if="date_modal_view == 2">
+            <form ng-submit="updateExpenses( expense_update_data )">
+              <div class="white-space-20"></div>
+              <div class="form-group">
+                <label>Description</label>
+                <input type="text" class="form-control" placeholder="" ng-model="expense_update_data.description" ng-model-options="{updateOn: 'blur'}"/>
+              </div>
+              <div class="form-group">
+                <label>Value</label>
+                <input type="number" class="form-control" placeholder="" ng-model="expense_update_data.value" ng-model-options="{updateOn: 'blur'}"/>
+              </div>  
+              <div class="white-space-20"></div>
+              <button hidden type="submit"></button>
+            </form>
+          </div>
+          
+        </div>
+        <div ng-if="date_modal_view != 0" class="modal-footer">
+
+          <button ng-if="date_modal_view == 1 || date_modal_view == 2" type="button" class="btn btn-primary" ng-click="setDateModalView( 0 )">Back</button>
+          <button ng-if="date_modal_view == 1" ng-disabled="!add_expenses.description || !add_expenses.value" type="button" class="btn btn-primary" ng-click="addExpenses( add_expenses )">Submit</button>
+
+          <button ng-if="date_modal_view == 2" ng-disabled="!expense_update_data.description || !expense_update_data.value" type="button" class="btn btn-primary" ng-click="updateExpenses( expense_update_data )">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="showInvestmentsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header justify-content-center">
+          <h5 class="modal-title fw-700 fs-16 " id="exampleModalLabel">Add Investment</h5>
+          <a href="javascript:void(0)" class="modal-header-close" data-dismiss="modal" aria-label="Close">
+            <i class="fa fa-times-circle"></i>
+          </a>
+        </div>
+        <div class="modal-body">
+
+          <div class="add-investment-container">
+            <form ng-submit="addInvestments( add_investment )">
+              <div class="white-space-20"></div>
+              <div class="form-group">
+                <label>Description</label>
+                <input type="text" class="form-control" placeholder="" ng-model="add_investment.description"/>
+              </div>
+              <div class="form-group">
+                <label>Value</label>
+                <input type="number" class="form-control" placeholder="" ng-model="add_investment.value"/>
+              </div>  
+              <div class="white-space-20"></div>
+              <button hidden type="submit"></button>
+            </form>
+          </div>
+          
+        </div>
+        <div class="modal-footer">
+          <button ng-disabled="!add_investment.description || !add_investment.value" type="button" class="btn btn-primary" ng-click="addInvestments( add_investment )">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="showAssetsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header justify-content-center">
+          <h5 class="modal-title fw-700 fs-16 " id="exampleModalLabel">Add Investment</h5>
+          <a href="javascript:void(0)" class="modal-header-close" data-dismiss="modal" aria-label="Close">
+            <i class="fa fa-times-circle"></i>
+          </a>
+        </div>
+        <div class="modal-body">
+
+          <div class="add-investment-container">
+            <form ng-submit="addAssets( add_asset )">
+              <div class="white-space-20"></div>
+              <div class="form-group">
+                <label>Description</label>
+                <input type="text" class="form-control" placeholder="" ng-model="add_asset.description"/>
+              </div>
+              <div class="form-group">
+                <label>Value</label>
+                <input type="number" class="form-control" placeholder="" ng-model="add_asset.value"/>
+              </div>  
+              <div class="white-space-20"></div>
+              <button hidden type="submit"></button>
+            </form>
+          </div>
+          
+        </div>
+        <div class="modal-footer">
+          <button ng-disabled="!add_asset.description || !add_asset.value" type="button" class="btn btn-primary" ng-click="addAssets( add_asset )">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

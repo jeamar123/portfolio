@@ -1,0 +1,108 @@
+<div class="user-settings-content" user-settings-directive>
+	<div class="row user-settings-wrapper">
+    <div class="col-2 no-padding-right">
+      <div class="white-box user-ul-box">
+      	<ul class="nav flex-column user-settings-ul">
+          <li class="nav-item active">
+            <a class="nav-link" href="javascript:void(0)">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">Update Password</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)" ui-sref="auth">Log Out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-5 profile-wrapper" >
+      <div class="white-box">
+      	<form>
+          <div class="row">
+            <div class="col col-12">
+              <div class="form-group">
+                <div class="img-wrapper">
+                  <img src="img/sample_user.JPG"> 
+                </div>
+                <div class="white-space-20"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-6">
+              <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" class="form-control" id="fname">
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" id="email">
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="text" class="form-control" id="phone">
+              </div>
+            </div>
+            <div class="col col-6">
+              <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" class="form-control" id="lname">
+              </div>
+              <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="text" class="form-control" id="dob">
+              </div>
+              <div class="form-group">
+                <label for="gender">Gender</label>
+                <input type="text" class="form-control" id="gender">
+              </div>
+            </div>
+            <div class="col col-12">
+              <div class="form-group">
+                <label for="address">Address</label>
+                <textarea class="form-control line-height-1" id="address" rows="5"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col col-12 text-right">
+              <div class="white-space-50"></div>
+              <button type="submit" class="btn btn-primary text-weight-700 update-btn">Update</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-4 password-wrapper" hidden>
+      <div class="white-box">
+        <form>
+          <div class="row">
+            <div class="col col-12">
+              <div class="form-group">
+                <label for="current">Current Password</label>
+                <input type="text" class="form-control" id="current">
+              </div>
+              <div class="form-group">
+                <label for="new">New Password</label>
+                <input type="text" class="form-control" id="new">
+              </div>
+              <div class="form-group">
+                <label for="re">Re-Type New Password</label>
+                <input type="text" class="form-control" id="re">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col col-12 text-right">
+              <div class="white-space-50"></div>
+              <button type="submit" class="btn btn-primary text-weight-700 update-btn">Update Password</button>
+            </div> 
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
